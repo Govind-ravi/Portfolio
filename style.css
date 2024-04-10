@@ -264,6 +264,10 @@ button:hover {
     transition: right 0.5s ease;
     z-index: 1000;
     }
+    .cover-container{
+        padding: 0;
+        margin: 0;
+    }
     
 }
 @media screen and (max-width: 512px) {
