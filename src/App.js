@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
+        <p className=''>
           New Portfolio is under development!
         </p>
       </header>
