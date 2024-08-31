@@ -3,15 +3,95 @@
 @tailwind utilities;
 
 /* Import the font in your CSS file */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
 
+:root{
+  --theme: #7ffaa2
+}
+
+* {
+  box-sizing: border-box;
+}
 /* Use the font in your styles */
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(47, 47, 47);
   color: white !important;
+}
+
+.theme {
+  background-color: var(--theme);
+  color: #282828;
+}
+
+.primary-font {
+  color: #7ffaa2;
+}
+.secondary-font {
+  color: #f4f4f4;
+}
+h2 {
+  font-weight: 300;
+}
+
+main{
+  height: calc(100vh-100px);
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+}
+/* WebKit browsers (Chrome, Safari) */
+main::-webkit-scrollbar {
+  display: none;
+}
+/* Firefox */
+main {
+  scrollbar-width: none;
+}
+/* Internet Explorer and Edge */
+main {
+  -ms-overflow-style: none;
+}
+section{
+ scroll-snap-align: start;
+ min-height: calc(100vh - 100px);
+}
+
+nav a.active{
+  font-weight: 600;
+  color: var(--theme);
+  transform: scale(1.15);
+}
+nav a{
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+nav a:hover{
+  transform: scale(1.15);
+}
+
+.blob {
+  background-color: #7ffaa2;
+  height: 500px;
+  width: 500px;
+  box-shadow: 0 20px 5px 5px rgba(0, 0, 0, 0.2);
+  animation: blob-animate 5s ease-in-out infinite;
+  transition: all 1s ease-in-out;
+}
+
+@keyframes blob-animate {
+  0% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
 }
