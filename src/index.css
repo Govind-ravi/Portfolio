@@ -44,7 +44,7 @@ h2 {
 main{
   height: calc(100vh-100px);
   scroll-snap-type: y mandatory;
-  overflow-y: auto;
+  overflow-y: scroll  ;
 }
 /* WebKit browsers (Chrome, Safari) */
 *::-webkit-scrollbar {
@@ -113,4 +113,20 @@ nav a:hover{
 .tab.active::after{
   background-color: var(--theme);
   width: 90%;
+}
+
+.glass{
+  background: rgba(255,255,255, 0.05);
+	border: 2px solid #2d2d2e;
+  border-radius: 13px;
+	backdrop-filter: blur(5px);
+	border-top: 1px solid rgba(255,255,255, 0.2);
+	border-left: 1px solid rgba(255,255,255, 0.2);
+	box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all;
+}
+.glass:hover{
+  transform: scale(1.01);
+  background: rgba(255,255,255, 0.1);
 }

@@ -21,14 +21,11 @@ function Projects() {
       features: [
         "Admin interface for product, collection and user management",
         "User authentication and authorization",
-        "Dynamic homepage and responsive design",
         "Cart and wishlist functionality",
         "Password reset via email",
-        "Cross Domain Deployment",
       ],
       tools: [
         "Git for Version Control",
-        "Firebase to store images",
         "Client side deployed on Vercel",
         "Server side deployed on Render",
       ],
@@ -74,7 +71,7 @@ function Projects() {
       <h1 className="text-5xl font-semibold mb-8 text-center text-theme">
         Projects
       </h1>
-      <div className="space-y-10">
+      <div className="space-y-8">
         {projects.map((project, index) => (
           <div
             key={index}
@@ -93,7 +90,7 @@ function Projects() {
                 </span>
                 {project.technologies.join(", ")}
               </p>
-              <ul className="mt-4 list-disc list-inside">
+              <ul className="mt-2 list-disc list-inside">
                 <span className="font-medium">Key Features:</span>
                 {project.features.map((feature, i) => (
                   <li key={i} className="mt-1 text-secondary">
@@ -101,7 +98,7 @@ function Projects() {
                   </li>
                 ))}
               </ul>
-              <ul className="mt-4 list-disc list-inside">
+              <ul className="mt-2 list-disc list-inside">
                 <span className="font-medium">Tools:</span>
                 {project.tools.map((feature, i) => (
                   <li key={i} className="mt-1 text-secondary">
