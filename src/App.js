@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import bgVideo from "./assests/BgVideo.mp4";
 import About from "./components/About";
+import Projects from "./components/Projects";
 
 function App() {
   useEffect(() => {
@@ -72,7 +73,10 @@ function App() {
           <section id="about">
             <About />
           </section>
-          <section id="projects">My Projects</section>
+          <section id="projects">
+            <Projects />
+          </section>
+          <section id="skills"></section>
         </main>
       </div>
     </>

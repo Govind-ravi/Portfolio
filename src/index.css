@@ -61,6 +61,8 @@ main{
 section{
  scroll-snap-align: start;
  min-height: calc(100vh - 100px);
+ overflow-y: auto;
+ height: auto;
 }
 
 nav a.active{
