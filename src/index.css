@@ -68,7 +68,7 @@ section{
 nav a.active{
   font-weight: 600;
   color: var(--theme);
-  transform: scale(1.15);
+  transform: scale(1.25);
 }
 nav a{
   display: inline-block;
@@ -129,4 +129,20 @@ nav a:hover{
 .glass:hover{
   transform: scale(1.01);
   background: rgba(255,255,255, 0.1);
+}
+.glassEffect {
+  background: rgba(190, 189, 189, 0.05);
+  box-shadow: 15px 15px rgba(205, 205, 205, 0.15);
+  transform: rotate(-45deg) translateY(-1200px);
+  animation: moveDiv 7s linear infinite;
+  
+}
+
+@keyframes moveDiv {
+  0%{
+    transform: rotate(-45deg) translateY(-4000px);
+  }
+  100%{
+    transform: rotate(-45deg) translateY(4000px);
+  }
 }

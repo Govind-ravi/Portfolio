@@ -1,5 +1,15 @@
 import React from "react";
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaPython, FaLaptopCode, FaCentercode } from "react-icons/fa";
+import {
+  FaReact,
+  FaNodeJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaGitAlt,
+  FaGithub,
+  FaPython,
+  FaLaptopCode,
+  FaCentercode,
+} from "react-icons/fa";
 import { SiExpress, SiMongodb, SiRedux } from "react-icons/si";
 import { RiJavascriptFill, RiTailwindCssFill } from "react-icons/ri";
 
@@ -104,17 +114,18 @@ function Service() {
           <div
             key={index}
             className="w-[300px] h-[300px] glass p-4 flex flex-col justify-evenly"
-            onClick={() => window.open(language.url, "_blank")}
           >
-            <div className="w-1/2 mx-auto">
-              <language.icon className="w-full text-theme h-full" />
-            </div>
-            <div className="text-2xl text-center font-medium">
-              {language.name}
-            </div>
-            <p className="text-sm text-center text-wrap">
-              {language.description}
-            </p>
+            <a href={language.url} target="_blank" rel="noopener noreferrer">
+              <div className="w-1/2 mx-auto">
+                <language.icon className="w-full text-theme h-full" />
+              </div>
+              <div className="text-2xl text-center font-medium">
+                {language.name}
+              </div>
+              <p className="text-sm text-center text-wrap">
+                {language.description}
+              </p>
+            </a>
           </div>
         ))}
       </div>
@@ -123,14 +134,14 @@ function Service() {
           <div
             key={index}
             className="w-[150px] h-[150px] glass flex flex-col justify-evenly"
-            onClick={() => window.open(language.url, "_blank")}
           >
-            <div className="w-1/2 mx-auto">
-              <language.icon className="w-full text-theme h-full" />
-            </div>
-            <div className="text-center font-medium">
-              {language.name}
-            </div>
+            {" "}
+            <a href={language.url} target="_blank" rel="noopener noreferrer">
+              <div className="w-1/2 mx-auto">
+                <language.icon className="w-full text-theme h-full" />
+              </div>
+              <div className="text-center font-medium">{language.name}</div>
+            </a>
           </div>
         ))}
       </div>

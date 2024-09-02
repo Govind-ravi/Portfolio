@@ -6,6 +6,7 @@ import bgVideo from "./assests/BgVideo.mp4";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Service from "./components/Service";
+import Contact from "./components/Contact";
 
 function App() {
   useEffect(() => {
@@ -55,6 +56,7 @@ function App() {
       document.removeEventListener("click", handleSmoothScroll);
     };
   }, []);
+
   return (
     <>
       <video
@@ -65,8 +67,11 @@ function App() {
         className="fixed top-0 left-0 w-full -z-[1]"
       ></video>
       <div className="fixed top-0 left-0 w-full h-full z-0 bg-[rgba(40,40,40,0.9)]"></div>
+      <div className="fixed h-[200px] glassEffect w-[2500px]">
+        <hr className="my-4 h-2 bg-white/50 w-full" />
+      </div>
       <div className="App relative z-[1] h-screen flex flex-col">
-        <Header />
+        <Header />  
         <main className="flex flex-col">
           <section id="home">
             <Home />
@@ -74,10 +79,15 @@ function App() {
           <section id="about">
             <About />
           </section>
-          <section id="projects">
+          <section id="projects" className="mb-8">
             <Projects />
           </section>
-          <section id="service"><Service/></section>
+          <section id="service" className="mb-8">
+            <Service />
+          </section>
+          <section id="contact">
+            <Contact />
+          </section>
         </main>
       </div>
     </>
