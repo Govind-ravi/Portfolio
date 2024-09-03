@@ -8,9 +8,10 @@ html {
   scroll-behavior: smooth;
 }
 
-:root{
+:root {
   --theme: #7ffaa2;
   --secondary: #f4f4f4;
+  --section-height: calc(100vh - 100px)
 }
 
 * {
@@ -41,11 +42,77 @@ h2 {
   font-weight: 300;
 }
 
-main{
-  height: calc(100vh-100px);
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll  ;
+/* Snap ON */
+.home {
+  height: var(--section-height);
 }
+main {
+  display: flex;
+  height: var(--section-height);
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+section {
+  scroll-snap-align: start;
+  min-height: var(--section-height);
+  overflow-y: auto;
+  height: auto;
+}
+.separator{
+  display: none;
+}
+
+/* Snap OFF */
+@media screen and (max-aspect-ratio: 1.5/1), (min-aspect-ratio: 2.5/1) {
+  .home {
+    height: 900px;
+  }
+  main {
+    display: block;
+    scroll-snap-type: none;
+  }
+  section {
+    min-height: 900px;
+    overflow-y: scroll;
+  }
+  .separator{
+    display: block;
+  }
+}
+@media screen and (max-aspect-ratio: 1.5/1), (min-aspect-ratio: 2.5/1) and (min-width: 1600px) {
+  .home {
+    height: 900px;
+  }
+  main {
+    display: block;
+    scroll-snap-type: none;
+  }
+  section {
+    min-height: 900px;
+    overflow-y: scroll;
+  }
+  .separator{
+    display: block;
+  }
+}
+@media screen and (max-aspect-ratio: 1.5/1), (min-aspect-ratio: 2.5/1) and (max-width: 1024px)  {
+  .home {
+    height: 500px;
+  }
+  main {
+    display: block;
+    scroll-snap-type: none;
+  }
+  section {
+    min-height: 500px;
+    overflow-y: scroll;
+  }
+  .separator{
+    display: block;
+  }
+}
+
+/* Scroll OFF */
 /* WebKit browsers (Chrome, Safari) */
 *::-webkit-scrollbar {
   display: none;
@@ -58,30 +125,34 @@ main{
 * {
   -ms-overflow-style: none;
 }
-section{
- scroll-snap-align: start;
- min-height: calc(100vh - 100px);
- overflow-y: auto;
- height: auto;
-}
 
-nav a.active{
+nav a.active {
   font-weight: 600;
   color: var(--theme);
   transform: scale(1.25);
 }
-nav a{
+
+@media screen and (max-width: 900px) {
+  nav a.active {
+    transform: scale(1.05);
+  }
+}
+@media screen and (max-width: 530px) {
+  nav a.active {
+    transform: scale(1.01);
+  }
+}
+
+nav a {
   display: inline-block;
   transition: transform 0.2s ease;
 }
-nav a:hover{
+nav a:hover {
   transform: scale(1.15);
 }
 
 .blob {
   background-color: #7ffaa2;
-  height: 500px;
-  width: 500px;
   box-shadow: 0 20px 5px 5px rgba(0, 0, 0, 0.2);
   animation: blob-animate 5s ease-in-out infinite;
   transition: all 1s ease-in-out;
@@ -100,49 +171,48 @@ nav a:hover{
 }
 
 .tab::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -2px;
   width: 50%;
   height: 3px;
   border-radius: 4px;
-  transition: width 0.3s ease;  
+  transition: width 0.3s ease;
   background-color: var(--secondary);
 }
-.tab.active::after{
+.tab.active::after {
   background-color: var(--theme);
   width: 90%;
 }
 
-.glass{
-  background: rgba(255,255,255, 0.05);
-	border: 2px solid #2d2d2e;
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #2d2d2e;
   border-radius: 13px;
-	backdrop-filter: blur(5px);
-	border-top: 1px solid rgba(255,255,255, 0.2);
-	border-left: 1px solid rgba(255,255,255, 0.2);
-	box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: all;
 }
-.glass:hover{
+.glass:hover {
   transform: scale(1.01);
-  background: rgba(255,255,255, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 .glassEffect {
   background: rgba(190, 189, 189, 0.05);
   box-shadow: 15px 15px rgba(205, 205, 205, 0.15);
   transform: rotate(-45deg) translateY(-1200px);
   animation: moveDiv 7s linear infinite;
-  
 }
 
 @keyframes moveDiv {
-  0%{
+  0% {
     transform: rotate(-45deg) translateY(-4000px);
   }
-  100%{
+  100% {
     transform: rotate(-45deg) translateY(4000px);
   }
 }
