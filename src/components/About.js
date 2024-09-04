@@ -1,13 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import AboutPic from "../assests/About.png";
 
 export default function About() {
   const [selectedTab, setSelectedTab] = useState("Education");
+  const [aspectRatio, setAspectRatio] = useState(1.5)
+
+  const aboutRef = useRef(null)
+
+  useEffect(() => {
+    const updateSectionHeight = () => {
+      if (aboutRef.current) {
+        const aboutHeight = aboutRef.current.offsetHeight;
+        const aboutWidth = aboutRef.current.offsetWidth;
+        const aspectRatio = aboutWidth / aboutHeight;
+        setAspectRatio(aspectRatio)
+      }
+    };
+
+    // Update height initially
+    updateSectionHeight();
+
+    // Add resize event listener to update height on window resize
+    window.addEventListener("resize", updateSectionHeight);
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener("resize", updateSectionHeight);
+    };
+  }, []);
 
   return (
       <div className="h-full w-full flex flex-col md:flex-row items-center justify-center md:justify-between xl:w-[90%] xl:gap-4">
         <div className=" md:-translate-x-28 w-[35%]">
-          <div className="ml-4 min-w-[300px] relative md:min-w-[calc(100%+40px)] aspect-square border-theme rounded-full border-[3px] flex items-center justify-center">
+          <div className={`ml-4 min-w-[300px] relative ${aspectRatio > 1.2 ? "md:min-h-[calc(100%+40px)]" : "md:min-w-[calc(100%+40px)]"} aspect-square border-theme rounded-full border-[3px] flex items-center justify-center`}>
             <div className="w-[280px] overflow-hidden md:min-w-[calc(100%-20px)] xl2:min-w-[calc(100%-40px)] aspect-square rounded-full bg-theme">
               <img
                 src={AboutPic}
@@ -17,13 +42,13 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="h-full p-2 flex items-center xl3:gap-10 w-[65%]">
-          <div className="space-y-4 xl3:space-y-8  overflow-y-scroll">
+        <div ref={aboutRef} className="h-full p-2 flex items-center xl3:gap-10 w-[65%]">
+          <div className={`space-y-4 xl3:space-y-8 ${aspectRatio > 1.2 && "h-full"} overflow-y-scroll`}>
             <div className="flex flex-col gap-2">
-              <h1 className="text-theme lg:text-3xl 2xl:text-4xl xl2:text-5xl xl3:text-7xl font-semibold">
+              <h1 className="text-theme md:text-xl lg:text-3xl 2xl:text-4xl xl2:text-5xl xl3:text-7xl font-semibold">
                 Who I Am
               </h1>
-              <p className="secondary-font indent-12 text-sm lg:text-base xl:text-lg 2xl:text-xl xl2:text-2xl xl3:text-3xl">
+              <p className="secondary-font indent-12 text-xs lg:text-base xl:text-lg 2xl:text-xl xl2:text-2xl xl3:text-3xl">
                 I’m <span className="font-medium">Govind Ravi</span>, a
                 dedicated software developer with expertise in both frontend and
                 backend technologies. I specialize in the MERN stack (MongoDB,
@@ -40,8 +65,8 @@ export default function About() {
                   onClick={() => setSelectedTab("Education")}
                   className={`cursor-pointer tab transition ${
                     selectedTab === "Education"
-                      ? "text-theme scale-105 active lg:text-xl xl:text-2xl 2xl:text-3xl xl3:text-5xl"
-                      : "scale-100 lg:text-xl xl:text-2xl 2xl:text-3xl xl3:text-5xl"
+                      ? "text-theme scale-105 active text-sm lg:text-xl xl:text-2xl 2xl:text-3xl xl3:text-5xl"
+                      : "scale-100 text-sm lg:text-xl xl:text-2xl 2xl:text-3xl xl3:text-5xl"
                   }`}
                 >
                   Education
@@ -50,8 +75,8 @@ export default function About() {
                   onClick={() => setSelectedTab("Achievements")}
                   className={`cursor-pointer tab transition ${
                     selectedTab === "Achievements"
-                      ? "text-theme scale-105 active lg:text-xl xl:text-2xl 2xl:text-3xl xl3:text-5xl"
-                      : "scale-100 lg:text-lg xl:text-xl 2xl:text-2xl xl3:text-4xl"
+                      ? "text-theme scale-105 active text-sm lg:text-xl xl:text-2xl 2xl:text-3xl xl3:text-5xl"
+                      : "scale-100 text-sm lg:text-lg xl:text-xl 2xl:text-2xl xl3:text-4xl"
                   }`}
                 >
                   Achievements
@@ -60,7 +85,7 @@ export default function About() {
               <div
                 className={`w-[200%] flex ${
                   selectedTab === "Education" ? "" : "-translate-x-1/2"
-                } transition duration-500 text-sm lg:text-sm xl:text-base 2xl:text-base xl2:text-xl xl3:text-2xl`}
+                } transition duration-500 text-xs lg:text-sm xl:text-base 2xl:text-base xl2:text-xl xl3:text-2xl`}
               >
                 <div className="education w-1/2 space-y-4 p-1">
                   <div className="flex gap-2">
@@ -115,10 +140,10 @@ export default function About() {
               </div>
             </div>
             <div>
-              <h3 className="lg:text-xl xl:text-2xl 2xl:text-3xl xl3:text-5xl text-theme font-semibold tab active scale-100 inline-block mb-2">
+              <h3 className="text-sm lg:text-xl xl:text-2xl 2xl:text-3xl xl3:text-5xl text-theme font-semibold tab active scale-100 inline-block mb-2">
                 Interests
               </h3>
-              <ul className="space-y-2 text-sm lg:text-sm xl:text-base 2xl:text-base xl2:text-xl xl3:text-2xl">
+              <ul className="space-y-2 text-xs lg:text-sm xl:text-base 2xl:text-base xl2:text-xl xl3:text-2xl">
                 <li>
                   <span className="font-medium">AI Proficiency:</span> Skilled
                   in leveraging AI for smart solutions
