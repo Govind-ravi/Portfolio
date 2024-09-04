@@ -12,6 +12,7 @@ html {
   --theme: #7ffaa2;
   --secondary: #f4f4f4;
   --section-height: calc(100vh - 100px)
+  --mobileSection-height: calc(100svh - 100px)
 }
 
 * {
@@ -114,20 +115,22 @@ section {
   }
 }
 
-@media screen and (max-aspect-ratio: 1.5/1), (min-aspect-ratio: 2.3/1) and (max-width: 768px) {
-  .home {
-    height: 400px;
+/* Snap ON on mobile devices */
+@media screen and (max-width: 767px) {
+  .home{
+    height: min(var(--mobileSection-height), var(--section-height));
+    /* margin-bottom: 60px; */
   }
   main {
     display: block;
-    scroll-snap-type: none;
+    scroll-snap-type: y mandatory;
   }
   section {
-    min-height: 400px;
+    min-height: var(--mobileSection-height);
     overflow-y: scroll;
   }
   .separator{
-    display: block;
+    display: none;
   }
 }
 
