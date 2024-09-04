@@ -6,15 +6,15 @@ import { FaXTwitter } from "react-icons/fa6";
 import CV from "../assests/Govind_CV.pdf";
 
 function Contact() {
-  const [aspectRatio, setAspectRatio] = useState(1.5)
-  const contactRef = useRef(null)  
+  const [aspectRatio, setAspectRatio] = useState(1.5);
+  const contactRef = useRef(null);
   useEffect(() => {
     const updateSectionHeight = () => {
       if (contactRef.current) {
         const aboutHeight = contactRef.current.offsetHeight;
         const aboutWidth = contactRef.current.offsetWidth;
         const aspectRatio = aboutWidth / aboutHeight;
-        setAspectRatio(aspectRatio)
+        setAspectRatio(aspectRatio);
       }
     };
 
@@ -30,8 +30,15 @@ function Contact() {
     };
   }, []);
   return (
-    <footer ref={contactRef} className="flex items-center h-full text-sm xxs:text-base md:text-sm lg:text-base 2xl:text-xl xl2:text-3xl xl3:text-4xl md:overflow-y-scroll">
-      <div className={`flex flex-col items-center gap-8 md:gap-6 ml:gap-7 lg:gap-8 xl:gap-10 xl3:gap-14 sm:mt-8 ${aspectRatio > 2.5 && "md:h-full"} `}>
+    <footer
+      ref={contactRef}
+      className="flex items-center h-full text-sm xxs:text-base md:text-sm lg:text-base 2xl:text-xl xl2:text-3xl xl3:text-4xl md:overflow-y-scroll"
+    >
+      <div
+        className={`flex flex-col items-center gap-8 md:gap-6 ml:gap-7 lg:gap-8 xl:gap-10 xl3:gap-14 sm:mt-8 ${
+          aspectRatio > 2.5 && "md:h-full"
+        } `}
+      >
         <div>
           <h1 className="text-3xl xs:text-3xl sm:text-4xl md:text-3xl ml:text-4xl lg:text-5xl xl2:text-7xl xl3:text-8xl font-semibold text-center mb-2 xl2:mb-4 text-theme">
             Have a project in mind?
@@ -48,11 +55,11 @@ function Contact() {
             govindnr20122001@gmail.com
           </p>
           <p className="flex items-center gap-2">
-            <MdCall className="text-theme text-xl ml:text-2xl"/>
+            <MdCall className="text-theme text-xl ml:text-2xl" />
             +91 8792589747
           </p>
           <p className="flex items-center gap-2">
-            <FaLocationDot className="text-theme text-xl ml:text-2xl"/>
+            <FaLocationDot className="text-theme text-xl ml:text-2xl" />
             Bengaluru, Karnataka
           </p>
         </div>
@@ -100,7 +107,7 @@ function Contact() {
             </a>
           </div>
         </div>
-        <hr className="bg-secondary w-2/3"/>
+        <hr className="bg-secondary w-2/3" />
         <div className="mb-8">
           © {new Date().getFullYear()}{" "}
           <span className="font-medium">Govind Ravi</span>. All rights reserved.

@@ -82,18 +82,20 @@ function Projects() {
             <div className="w-[95%] md:w-[60%]">
               <h2 className="xl2:mb-4 text-[17px] xxs:text-xl xs:text-2xl sm:text-3xl md:text-xl ml:text-2xl lg:text-3xl 2xl:text-4xl xl2:text-5xl xl3:text-7xl font-medium">
                 {project.title}{" "}
-                <span className="text-xs xxs:text-sm sm:text-base md:text-xs ml:text-sm lg:text-lg 2xl:text-xl xl2:text-2xl xl3:text-3xl text-secondary">({project.date})</span>
+                <span className="text-xs xxs:text-sm sm:text-base md:text-xs ml:text-sm lg:text-lg 2xl:text-xl xl2:text-2xl xl3:text-3xl text-secondary">
+                  ({project.date})
+                </span>
               </h2>
               <div className="md:hidden mt-2 w-[95%] md:w-[40%]">
-              <video
-                controls
-                muted
-                autoPlay
-                loop
-                src={project.video}
-                className="w-full rounded"
-              ></video>
-            </div>
+                <video
+                  controls
+                  muted
+                  autoPlay
+                  loop
+                  src={project.video}
+                  className="w-full rounded"
+                ></video>
+              </div>
               <p className="mt-2 flex gap-2 text-xs xxs:text-sm xs:text-base md:text-xs ml:text-sm lg:text-sm 2xl:text-base xl2:text-2xl xl3:text-2xl">
                 <span className="font-medium text-nowrap">
                   Technologies used:{" "}

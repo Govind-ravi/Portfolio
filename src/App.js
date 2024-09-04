@@ -20,11 +20,17 @@ function App() {
     const updateWindow = () => {
       if (navbarRef.current) {
         const navberHeight = navbarRef.current.offsetHeight;
-        document.documentElement.style.setProperty("--section-height", `calc(100vh - ${navberHeight}px)`)
-        document.documentElement.style.setProperty("--mobileSection-height", `calc(100svh - ${navberHeight}px)`)
+        document.documentElement.style.setProperty(
+          "--section-height",
+          `calc(100vh - ${navberHeight}px)`
+        );
+        document.documentElement.style.setProperty(
+          "--mobileSection-height",
+          `calc(100svh - ${navberHeight}px)`
+        );
       }
-      const newWidth = window.innerWidth
-      const newHeight = window.innerHeight
+      const newWidth = window.innerWidth;
+      const newHeight = window.innerHeight;
       setWidth(newWidth);
       setHeight(newHeight);
       setAspectRatio(newWidth / newHeight);
@@ -91,7 +97,6 @@ function App() {
     };
   }, []);
 
-
   return (
     <>
       <video
@@ -106,24 +111,24 @@ function App() {
         <hr className="my-4 h-2 bg-white/50 w-full" />
       </div>
       <div className="App relative z-[1] h-screen flex flex-col">
-        <Header ref={navbarRef} />  
+        <Header ref={navbarRef} />
         <main className="flex-col">
           <section id="home">
             <Home />
           </section>
-          <div className="separator bg-white/20 h-3 my-8 shadow-md shadow-black/70"/>
+          <div className="separator bg-white/20 h-3 my-8 shadow-md shadow-black/70" />
           <section id="about">
             <About />
           </section>
-          <div className="separator bg-white/20 h-3 my-8 shadow-md shadow-black/70"/>
+          <div className="separator bg-white/20 h-3 my-8 shadow-md shadow-black/70" />
           <section id="projects" className="mb-8">
             <Projects />
           </section>
-          <div className="separator bg-white/20 h-3 my-8 shadow-md shadow-black/70"/>
+          <div className="separator bg-white/20 h-3 my-8 shadow-md shadow-black/70" />
           <section id="service" className="mb-8">
             <Service />
           </section>
-          <div className="separator bg-white/20 h-3 my-8 shadow-md shadow-black/70"/>
+          <div className="separator bg-white/20 h-3 my-8 shadow-md shadow-black/70" />
           <section id="contact">
             <Contact />
           </section>

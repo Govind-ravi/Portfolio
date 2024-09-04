@@ -27,10 +27,10 @@ const Home = () => {
           </h1>
           <div>
             <h2 className="flex flex-col xs:block xxs:text-lg xs:text-xl xsm:text-3xl md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl xl3:text-5xl font-normal secondary-font">
-              <span>And I'm a{" "}</span>
+              <span>And I'm a </span>
               <span className="inline-block text-xl xxs:text-2xl xs:text-2xl xsm:text-[35px] md:text-xl lg:text-[22px] xl:text-3xl 2xl:text-4xl xl3:text-6xl primary-font font-medium xl2:font-semibold">
                 {text}
-              <Cursor />
+                <Cursor />
               </span>
             </h2>
           </div>

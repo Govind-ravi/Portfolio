@@ -115,7 +115,12 @@ function Service() {
             key={index}
             className="w-[150px] xxs:w-[170px] xs:w-[200px] md:w-[150px] ml:w-[175px] lg:w-[200px] lg2:w-[225px] xl:w-[250px] 2xl:w-[290px] 3xl:w-[300px] xl2:w-[350px] xl3:w-[400px] flex-wrap aspect-square glass p-1 xxs:p-2 xs:p-4 flex flex-col justify-evenly"
           >
-            <a href={language.url} target="_blank" rel="noopener noreferrer" className="flex flex-col justify-evenly h-full">
+            <a
+              href={language.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col justify-evenly h-full"
+            >
               <div className="h-1/2 mx-auto">
                 <language.icon className="w-full text-theme h-full" />
               </div>
@@ -136,11 +141,18 @@ function Service() {
             className="w-[80px] xs:w-[100px] md:w-[75px] ml:w-[100px] xl:w-[125px] 2xl:w-[150px] xl2:w-[175px] xl3:w-[200px] aspect-square glass flex flex-col justify-evenly"
           >
             {" "}
-            <a href={language.url} target="_blank" rel="noopener noreferrer" className="space-y-2">
+            <a
+              href={language.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="space-y-2"
+            >
               <div className="w-1/2 mx-auto">
                 <language.icon className="w-full text-theme h-full" />
               </div>
-              <div className="text-[10px] xs:text-sm sm:text-base md:text-[8px] ml:text-xs lg:text-sm 2xl:text-base xl2:text-lg xl3:text-2xl text-center font-semibold xs:font-medium">{language.name}</div>
+              <div className="text-[10px] xs:text-sm sm:text-base md:text-[8px] ml:text-xs lg:text-sm 2xl:text-base xl2:text-lg xl3:text-2xl text-center font-semibold xs:font-medium">
+                {language.name}
+              </div>
             </a>
           </div>
         ))}
