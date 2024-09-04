@@ -6,7 +6,6 @@ export const theme = {
   extend: {
     screens: {
       xxs: "380px",
-      //Done
       xs: "480px",
       xsm: "530px",
       sm: "640px",

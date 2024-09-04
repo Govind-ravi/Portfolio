@@ -12,7 +12,8 @@ html {
 :root {
   --theme: #7ffaa2;
   --secondary: #f4f4f4;
-  --section-height: calc(100vh - 100px) --mobileSection-height: calc(100svh - 100px);
+  --section-height: calc(100vh - 100px);
+  --mobileSection-height: calc(100svh - 100px);
 }
 
 * {
