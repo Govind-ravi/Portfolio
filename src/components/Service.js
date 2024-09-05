@@ -122,9 +122,9 @@ function Service() {
               className="flex flex-col justify-evenly h-full"
             >
               <div className="h-1/2 mx-auto">
-                <language.icon className="w-full text-theme h-full" />
+                <language.icon className="w-full min-w-[55px] text-theme h-full" />
               </div>
-              <div className="text-base xs:text-lg md:text-sm lg:text-lg lg2:text-xl 2xl:text-2xl xl2:text-3xl xl3:text-4xl text-center font-medium">
+              <div className="text-sm xxs:text-base xs:text-lg md:text-sm lg:text-lg lg2:text-xl 2xl:text-2xl xl2:text-3xl xl3:text-4xl text-center font-medium">
                 {language.name}
               </div>
               <p className="text-[10px] xs:text-xs md:text-[8px] ml:text-[10px] lg:text-xs lg2:text-sm 2xl:text-base xl2:text-lg xl3:text-xl text-center text-wrap">
