@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.338c3b49.css",
-    "main.js": "/Portfolio/static/js/main.b1f01364.js",
+    "main.css": "/Portfolio/static/css/main.7dff7285.css",
+    "main.js": "/Portfolio/static/js/main.9fddc1f2.js",
     "static/media/BgVideo.mp4": "/Portfolio/static/media/BgVideo.ccbd17a58dd345cff595.mp4",
     "static/media/RealEstate.mp4": "/Portfolio/static/media/RealEstate.19b6d8068e03bb8dd22a.mp4",
     "static/media/BgVideo2.mp4": "/Portfolio/static/media/BgVideo2.a1da2e4dba7042bdda1f.mp4",
@@ -9,13 +9,12 @@
     "static/media/About.png": "/Portfolio/static/media/About.0c60380f1a8d601bc76b.png",
     "static/media/Hero.png": "/Portfolio/static/media/Hero.b1789ee9ce3e132ae761.png",
     "static/media/Govind_CV.pdf": "/Portfolio/static/media/Govind_CV.691e1d544792e262f9b3.pdf",
-    "static/media/Logo.PNG": "/Portfolio/static/media/Logo.4af55026d624088d55c0.PNG",
     "index.html": "/Portfolio/index.html",
-    "main.338c3b49.css.map": "/Portfolio/static/css/main.338c3b49.css.map",
-    "main.b1f01364.js.map": "/Portfolio/static/js/main.b1f01364.js.map"
+    "main.7dff7285.css.map": "/Portfolio/static/css/main.7dff7285.css.map",
+    "main.9fddc1f2.js.map": "/Portfolio/static/js/main.9fddc1f2.js.map"
   },
   "entrypoints": [
-    "static/css/main.338c3b49.css",
-    "static/js/main.b1f01364.js"
+    "static/css/main.7dff7285.css",
+    "static/js/main.9fddc1f2.js"
   ]
 }
