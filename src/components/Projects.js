@@ -2,7 +2,7 @@ import React from "react";
 import ECommerceVideo from "../assests/E-commerce.mp4";
 import RealEstate from "../assests/RealEstate.mp4";
 
-function Projects() {
+function Projects({ aspectRatio }) {
   const projects = [
     {
       title: "E-Commerce Platform",
@@ -67,77 +67,97 @@ function Projects() {
   ];
 
   return (
-    <div className="py-4 w-[95%] 2xl:w-[90%] mx-auto">
-      <h1 className="text-3xl xxs:text-4xl md:text-2xl ml:text-3xl lg:text-4xl 2xl:text-5xl xl2:text-6xl xl3:text-8xl font-semibold mb-4 lg:mb-8 text-center text-theme">
+    <div className="xsm:mx-16">
+      <h1
+        data-aos="zoom-in"
+        className="light-text text-7xl text-center font-semibold mb-32"
+      >
         Projects
       </h1>
-      <div className="space-y-8 md:space-y-4 ml:space-y-8">
+      <div className="flex flex-col gap-32">
         {projects.map((project, index) => (
           <div
             key={index}
-            className={`flex items-center w-full ${
-              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-            } gap-6 flex-col-reverse`}
+            className={`flex ${
+              aspectRatio < 1 ? "flex-col" : ""
+            } items-center gap-8 ${
+              index % 2 === 0 && aspectRatio >= 1
+                ? "flex-row"
+                : "flex-row-reverse"
+            }`}
           >
-            <div className="w-[95%] md:w-[60%]">
-              <h2 className="xl2:mb-4 text-[17px] xxs:text-xl xs:text-2xl sm:text-3xl md:text-xl ml:text-2xl lg:text-3xl 2xl:text-4xl xl2:text-5xl xl3:text-7xl font-medium">
-                {project.title}{" "}
-                <span className="text-xs xxs:text-sm sm:text-base md:text-xs ml:text-sm lg:text-lg 2xl:text-xl xl2:text-2xl xl3:text-3xl text-secondary">
-                  ({project.date})
-                </span>
-              </h2>
-              <div className="md:hidden mt-2 w-[95%] md:w-[40%]">
-                <video
-                  controls
-                  muted
-                  autoPlay
-                  loop
-                  src={project.video}
-                  className="w-full rounded"
-                ></video>
-              </div>
-              <p className="mt-2 flex gap-2 text-xs xxs:text-sm xs:text-base md:text-xs ml:text-sm lg:text-sm 2xl:text-base xl2:text-2xl xl3:text-2xl">
-                <span className="font-medium text-nowrap">
-                  Technologies used:{" "}
-                </span>
-                {project.technologies.join(", ")}
-              </p>
-              <ul className="mt-2 list-disc list-inside text-xs xxs:text-sm xs:text-base md:text-xs ml:text-sm lg:text-sm 2xl:text-base xl2:text-2xl xl3:text-2xl">
-                <span className="font-medium">Key Features:</span>
-                {project.features.map((feature, i) => (
-                  <li key={i} className="mt-1 text-secondary">
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <ul className="mt-2 list-disc list-inside text-xs xxs:text-sm xs:text-base md:text-xs ml:text-sm lg:text-sm 2xl:text-base xl2:text-2xl xl3:text-2xl">
-                <span className="font-medium">Tools:</span>
-                {project.tools.map((feature, i) => (
-                  <li key={i} className="mt-1 text-secondary">
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-2 md:mt-6 flex space-x-4 text-xs xxs:text-sm xs:text-base md:text-xs ml:text-sm lg:text-sm 2xl:text-base xl2:text-2xl xl3:text-2xl">
-                <a
-                  href={project.liveDemo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="theme px-2 py-1 md:py-2 md:px-4 rounded font-semibold"
+            <div
+              data-aos="zoom-in"
+              className={`text-3xl font-medium ${
+                aspectRatio < 1 ? "w-full" : "w-1/2"
+              }`}
+            >
+              <div className="text-box w-full" style={{ padding: "10px" }}>
+                <h1 className="text-4xl font-bold mb-2">
+                  {project.title}{" "}
+                  <span className="text-2xl">({project.date})</span>
+                </h1>
+                <div className="flex gap-2">
+                  <span className="font-semibold text-nowrap text-2xl">
+                    Technologies used:{" "}
+                  </span>
+                  <span className="text-2xl">
+                    {project.technologies.join(", ")}
+                  </span>
+                </div>
+                <ul className="mt-2 list-disc list-inside text-2xl">
+                  <span className="font-semibold">Key Features:</span>
+                  {project.features.map((feature, i) => (
+                    <li key={i} className="mt-1">
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <ul className="mt-2 list-disc list-inside text-2xl">
+                  <span className="font-semibold">Tools used:</span>
+                  {project.tools.map((tool, i) => (
+                    <li key={i} className="mt-1">
+                      {tool}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 flex gap-8 font-bold underline">
+                  <a
+                    href={project.liveDemo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-800"
+                  >
+                    Live Demo
+                  </a>
+                  <a
+                    href={project.sourceCode}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400"
+                  >
+                    Source Code
+                  </a>
+                </div>
+                <div
+                  data-ao="zoom-in"
+                  className={`${aspectRatio < 1 ? "mt-8" : "hidden"}`}
                 >
-                  Live Demo
-                </a>
-                <a
-                  href={project.sourceCode}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gray-600 hover:bg-gray-500 text-white px-2 py-1 md:py-2 md:px-4 rounded-lg font-semibold"
-                >
-                  Source Code
-                </a>
+                  <video
+                    controls
+                    muted
+                    autoPlay
+                    loop
+                    src={project.video}
+                    className="w-full rounded"
+                  ></video>
+                </div>
               </div>
             </div>
-            <div className="hidden md:block w-[95%] md:w-[40%]">
+            <div
+              data-aos="zoom-in"
+              className={`${aspectRatio < 1 ? "hidden" : "w-1/2"}`}
+            >
               <video
                 controls
                 muted

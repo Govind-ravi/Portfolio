@@ -99,46 +99,46 @@ const additionalSkills = [
 
 function Service() {
   return (
-    <div className="mb-4 xs:mb-0 py-4 px-1 xxs:px-2 md:px-10 xl2:px-8 xl3:px-12 space-y-8 xl2:space-y-12">
-      <div>
-        <h1 className="text-3xl xxs:text-4xl md:text-2xl ml:text-3xl lg:text-4xl 2xl:text-5xl xl2:text-6xl xl3:text-8xl font-semibold text-center  mb-2 text-theme">
+    <div className="mt-32">
+      <div data-aos="zoom-in">
+        <h1 className="light-text text-7xl text-center font-semibold mb-2">
           My Services
         </h1>
-        <p className="text-center w-[90%] md:w-2/3 xl:w-1/2 xl3:w-2/3 mx-auto mb-8 text-secondary text-xs xxs:text-sm xs:text-base md:text-xs ml:text-sm lg:text-lg 2xl:text-xl xl2:text-2xl xl3:text-3xl">
+        <p className="text-center text-2xl mb-32 w-1/2 mx-auto">
           Bringing your digital ideas to life with expertise in website
           development, creating efficient, dynamic and user-friendly solutions.
         </p>
       </div>
-      <div className="flex justify-center gap-2 xxs:gap-4 xs:gap-8 md:gap-4 ml:gap-8 xl:gap-12 3xl:gap-16 xl2:gap-11 xl3:gap-20 flex-wrap content-between">
+      <div className="flex justify-center gap-16 flex-wrap content-between mb-24">
         {coreSkills.map((language, index) => (
           <div
+            data-aos="zoom-in"
             key={index}
-            className="w-[150px] xxs:w-[170px] xs:w-[200px] md:w-[150px] ml:w-[175px] lg:w-[200px] lg2:w-[225px] xl:w-[250px] 2xl:w-[290px] 3xl:w-[300px] xl2:w-[350px] xl3:w-[400px] flex-wrap aspect-square glass p-1 xxs:p-2 xs:p-4 flex flex-col justify-evenly"
+            className="w-80 xs:w-96 flex flex-col justify-evenly flex-wrap aspect-square theme-border p-2 rounded-2xl theme-shadow hover:scale-[1.02] transition"
           >
             <a
               href={language.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col justify-evenly h-full"
+              className="flex flex-col justify-evenly h-full text-xl"
             >
               <div className="h-1/2 mx-auto">
                 <language.icon className="w-full min-w-[55px] text-theme h-full" />
               </div>
-              <div className="text-sm xxs:text-base xs:text-lg md:text-sm lg:text-lg lg2:text-xl 2xl:text-2xl xl2:text-3xl xl3:text-4xl text-center font-medium">
+              <div className="text-center font-medium text-3xl">
                 {language.name}
               </div>
-              <p className="text-[10px] xs:text-xs md:text-[8px] ml:text-[10px] lg:text-xs lg2:text-sm 2xl:text-base xl2:text-lg xl3:text-xl text-center text-wrap">
-                {language.description}
-              </p>
+              <p className="text-center text-wrap">{language.description}</p>
             </a>
           </div>
         ))}
       </div>
-      <div className="flex justify-center flex-wrap content-between gap-4 md:gap-6 xl:gap-8 xs:mx-8">
+      <div className="flex justify-center flex-wrap content-between gap-10 sm:gap-32">
         {additionalSkills.map((language, index) => (
           <div
+            data-aos="zoom-in"
             key={index}
-            className="w-[80px] xs:w-[100px] md:w-[75px] ml:w-[100px] xl:w-[125px] 2xl:w-[150px] xl2:w-[175px] xl3:w-[200px] aspect-square glass flex flex-col justify-evenly"
+            className="w-40 sm:w-54 flex flex-col justify-evenly"
           >
             {" "}
             <a
@@ -147,10 +147,10 @@ function Service() {
               rel="noopener noreferrer"
               className="space-y-2"
             >
-              <div className="w-1/2 mx-auto">
+              <div className="theme-shadow p-2 mb-4">
                 <language.icon className="w-full text-theme h-full" />
               </div>
-              <div className="text-[10px] xs:text-sm sm:text-base md:text-[8px] ml:text-xs lg:text-sm 2xl:text-base xl2:text-lg xl3:text-2xl text-center font-semibold xs:font-medium">
+              <div className="text-center text-2xl font-medium">
                 {language.name}
               </div>
             </a>

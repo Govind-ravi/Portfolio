@@ -1,39 +1,80 @@
-import React, { forwardRef } from "react";
-import Logo from "../assests/Logo.PNG";
+import React, { useState } from "react";
+import { CgMenuRight } from "react-icons/cg";
 
-const Header = forwardRef((props, ref) => {
+const Header = ({ activeSection }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
   return (
     <nav
-      ref={ref}
-      className="p-1 xxs:p-2 md:px-4 ml:px-6 lg:px-10 xl:py-6 2xl:px-16 2xl:py-6 flex flex-col sm:flex-row gap-2 sm:gap-1 justify-between items-center"
+      data-aos="fade-down"
+      className="flex justify-between items-center z-[5]"
     >
-      <div className="flex items-center">
-        <div className="w-14 xsm:w-16 md:w-20">
-          <img src={Logo} alt="Logo" />
+      <span className="logo font-bold text-[2.5rem] sm:text-4xl cursor-pointer">
+        Tech<span className="text-theme">Portfolio</span>
+      </span>
+      <div className="tabs relative flex gap-4 nav-items items-center justify-between w-1/2 font-semibold">
+        <a className={activeSection === "home" ? "active" : ""} href="#home">
+          Home
+        </a>
+        <a className={activeSection === "about" ? "active" : ""} href="#about">
+          About
+        </a>
+        <a
+          className={activeSection === "projects" ? "active" : ""}
+          href="#projects"
+        >
+          Projects
+        </a>
+        <a
+          className={activeSection === "service" ? "active" : ""}
+          href="#service"
+        >
+          Service
+        </a>
+        <a
+          className={activeSection === "contact" ? "active" : ""}
+          href="#contact"
+        >
+          Contact
+        </a>
+        <div
+          className="arrow cursor-pointer text-secondary"
+          onClick={handleMenuToggle}
+        >
+          <CgMenuRight size={18} />
         </div>
-        <span className="font-medium text-3xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl xl2:text-7xl">
-          TechPortfolio
-        </span>
-      </div>
-      <div className="flex items-center gap-3 xxs:gap-4 md:gap-5 ml:gap-8 lg:gap-12 xl:gap-16 xxs:font-medium text-[15px] xxs:text-[17px] xsm:text-lg sm:text-base md:text-lg xl:text-xl 2xl:text-2xl xl2:text-3xl">
-        <div>
-          <a href="#home">Home</a>
-        </div>
-        <div>
-          <a href="#about">About</a>
-        </div>
-        <div>
-          <a href="#projects">Projects</a>
-        </div>
-        <div>
-          <a href="#service">Service</a>
-        </div>
-        <div>
-          <a href="#contact">Contact</a>
-        </div>
+        {menuOpen && (
+          <div
+            onClick={handleMenuToggle}
+            className="absolute top-0 left-0 h-screen w-screen z-[9]"
+          ></div>
+        )}
+        {menuOpen && (
+          <div
+            className="menu text-box absolute right-0 top-16 bg-white shadow-lg z-10 space-y-2"
+            style={{ padding: "10px" }}
+          >
+            {["home", "about", "projects", "service", "contact"].map(
+              (section) =>
+                activeSection !== section && (
+                  <a
+                    key={section}
+                    href={`#${section}`}
+                    onClick={handleMenuToggle}
+                  >
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </a>
+                )
+            )}
+          </div>
+        )}
       </div>
     </nav>
   );
-});
+};
 
 export default Header;

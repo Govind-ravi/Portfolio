@@ -20,8 +20,10 @@ export const theme = {
       xl3: "2000px",
     },
     colors: {
-      theme: "#7ffaa2",
+      bg: "#080808",
+      theme: "#00ffee",
       secondary: "#f4f4f4",
+      tertiary: "#bdbdbd",
     },
   },
 };
