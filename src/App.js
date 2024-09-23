@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
 import Header from "./components/Header";
 import { FaArrowUp } from "react-icons/fa";
 import Home from "./components/Home";
