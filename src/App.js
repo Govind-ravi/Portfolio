@@ -10,8 +10,16 @@ import Service from "./components/Service";
 import Contact from "./components/Contact";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ReactGA from "react-ga";
+
+const TRACKING_ID = "G-PN0BYK4ETM";
+ReactGA.initialize(TRACKING_ID);
 
 function App() {
+  useEffect(() => {
+    // Track the initial page load
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   useEffect(() => {
     AOS.init({
       duration: 1000,
